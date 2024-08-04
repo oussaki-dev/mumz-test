@@ -30,7 +30,7 @@ const ProductListing = () => {
     return (
         <SafeAreaView className="flex-1 bg-white">
           <FlatList
-            columnWrapperStyle={{ gap: 2 }}
+            // columnWrapperStyle={{ gap: 2 }}
             contentContainerStyle={{ alignItems: 'center' }}
             data={data}
             keyExtractor={(item) => item.id.toString()}
