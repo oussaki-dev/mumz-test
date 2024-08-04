@@ -8,6 +8,7 @@ interface MinimumPrice {
 interface Discount{
   amountOff: number;
   percentOff: number;
+  roundedDiscount: number;
 }
 
 interface Price {

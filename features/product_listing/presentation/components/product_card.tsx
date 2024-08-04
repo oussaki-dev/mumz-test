@@ -4,7 +4,7 @@ import "../../../../styles.css";
 
 const ProductCard = ({ product }) => {
 
-    let priceIsDiscounted = product.price.discount != undefined && product.price.discount.percentOff != 0;
+    let priceIsDiscounted = product.price.discount != undefined && product.price.discount.roundedDiscount != 0;
 
     return (
         <View className="p-2 bg-white rounded-lg w-6/12">
@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
 
                 {priceIsDiscounted &&
                     <View className="absolute bg-[#FDF4F4] rounded-tl-lg rounded-br-lg p-2" >
-                        <Text className="text-[#CE3637] text-xs color-[#CE3637] font-semibold">{product.price.discount.percentOff}% off</Text>
+                        <Text className="text-[#CE3637] text-xs color-[#CE3637] font-semibold">{product.price.discount.roundedDiscount}% off</Text>
                     </View>
                 }
 
