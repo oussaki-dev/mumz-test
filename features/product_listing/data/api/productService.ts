@@ -26,11 +26,19 @@ const getProducts = async (): Promise<ProductModel[]> => {
                     discount: {
                         amountOff: price.discount.amount_off,
                         percentOff:  price.discount.percent_off,
+                        roundedDiscount: 0
                     }
                 },
                 { url: product.small_image.url },
                 product.stock_status,
-                product.is_yalla.length > 0
+                product.is_yalla.length > 0,
+                {
+                    activeFrom: product.product_label.active_from,
+                    activeTo: product.product_label.active_to,
+                    backgroundColor: product.product_label.background_color,
+                    labelText: product.product_label.label_text,
+                    textColor: product.product_label.text_color
+                }
             );
         });
         return products;

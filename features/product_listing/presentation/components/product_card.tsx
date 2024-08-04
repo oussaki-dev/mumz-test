@@ -5,7 +5,9 @@ import "../../../../styles.css";
 const ProductCard = ({ product }) => {
 
     let priceIsDiscounted = product.price.discount != undefined && product.price.discount.roundedDiscount != 0;
-
+   
+    let hasLabel = product.productLabel.labelText.length > 0
+    
     return (
         <View className="p-2 bg-white rounded-lg w-6/12">
             <View className="relative border-[#C1CFDE] border rounded-lg ">
@@ -15,8 +17,14 @@ const ProductCard = ({ product }) => {
                 />
 
                 {priceIsDiscounted &&
-                    <View className="absolute bg-[#FDF4F4] rounded-tl-lg rounded-br-lg p-2" >
+                    <View className="absolute bg-[#FDF4F4] rounded-tl-lg rounded-br-2xl p-2" >
                         <Text className="text-[#CE3637] text-xs color-[#CE3637] font-semibold">{product.price.discount.roundedDiscount}% off</Text>
+                    </View>
+                }
+
+                {hasLabel &&
+                    <View className="absolute top-0 right-0 bg-[#d4f4e3] rounded-tr-lg rounded-bl-2xl p-2">
+                        <Text className="text-[#43454c] text-xs font-semibold">{product.productLabel.labelText}</Text>
                     </View>
                 }
 

@@ -21,6 +21,14 @@ interface SmallImage {
   url: string;
 }
 
+interface ProductLabel {
+  activeFrom: string;
+  activeTo: string;
+  backgroundColor: string;
+  labelText: string;
+  textColor: string;
+}
+
 class ProductModel {
   id: number;
   name: string;
@@ -28,6 +36,7 @@ class ProductModel {
   smallImage: SmallImage;
   stockStatus: string;
   isYalla: boolean;
+  productLabel:ProductLabel;
 
   constructor(
     id: number,
@@ -35,7 +44,8 @@ class ProductModel {
     price: MinimumPrice,
     smallImage: SmallImage,
     stockStatus: string,
-    isYalla: boolean
+    isYalla: boolean,
+    productLabel:ProductLabel
   ) {
     this.id = id;
     this.name = name;
@@ -43,6 +53,7 @@ class ProductModel {
     this.smallImage = smallImage;
     this.stockStatus = stockStatus;
     this.isYalla = isYalla;
+    this.productLabel = productLabel;
   }
 }
 

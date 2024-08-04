@@ -5,8 +5,9 @@ const fetchProducts = async (): Promise<ProductModel[]> => {
     const productData = await getProducts();
     productData.forEach((product) => {
         let price = product.price
+
         let roundedPercentage = Math.round(price.discount.percentOff)
-        console.log(roundedPercentage);
+        
         price.discount.roundedDiscount = roundedPercentage
         price.regularPrice.formatted = price.regularPrice.value.toFixed(2)
         price.finalPrice.formatted = price.finalPrice.value.toFixed(2)
