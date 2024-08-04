@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList } from "react-native";
+import { ActivityIndicator, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ProductModel from "../domain/model/ProductModel";
 import fetchProducts from "../domain/usecases/fetchProducts";
@@ -28,9 +28,10 @@ const ProductListing = () => {
     }
   
     return (
-        <SafeAreaView className="flex-1 bg-gray-100">
+        <SafeAreaView className="flex-1 bg-white">
           <FlatList
-            contentContainerStyle={{ alignItems: 'center', padding: 20 }}
+            columnWrapperStyle={{ gap: 2 }}
+            contentContainerStyle={{ alignItems: 'center' }}
             data={data}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => <Product_card product={item} />}

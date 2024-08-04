@@ -3,6 +3,7 @@ interface Price {
     amount: {
       currency: string;
       value: number;
+      formatted: string;
     };
   };
 }
