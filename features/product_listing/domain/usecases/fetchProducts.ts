@@ -4,10 +4,12 @@ import ProductModel from "../model/ProductModel";
 const fetchProducts = async (): Promise<ProductModel[]> => {
   const productData = await getProducts();
   productData.forEach((product)=> {
-    product.price.regularPrice.amount.formatted = product.price.regularPrice.amount.value.toFixed(2)
+    let price = product.price
+    price.regularPrice.formatted = price.regularPrice.value.toFixed(2)
+    price.finalPrice.formatted = price.finalPrice.value.toFixed(2)
   });
   // we can filters or anything here 
-  console.log(productData.length);
+  console.log('Products fetched '+productData.length);
   return productData;
 };
 

@@ -1,11 +1,19 @@
+
+interface MinimumPrice {
+  regularPrice: Price,
+  finalPrice: Price;
+  discount: Discount;
+}
+
+interface Discount{
+  amountOff: number;
+  percentOff: number;
+}
+
 interface Price {
-  regularPrice: {
-    amount: {
-      currency: string;
-      value: number;
-      formatted: string;
-    };
-  };
+  currency: string;
+  value: number;
+  formatted: string;
 }
 
 interface SmallImage {
@@ -15,22 +23,25 @@ interface SmallImage {
 class ProductModel {
   id: number;
   name: string;
-  price: Price;
+  price: MinimumPrice;
   smallImage: SmallImage;
   stockStatus: string;
+  isYalla: boolean;
 
   constructor(
     id: number,
     name: string,
-    price: Price,
+    price: MinimumPrice,
     smallImage: SmallImage,
-    stockStatus: string
+    stockStatus: string,
+    isYalla: boolean
   ) {
     this.id = id;
     this.name = name;
     this.price = price;
     this.smallImage = smallImage;
     this.stockStatus = stockStatus;
+    this.isYalla = isYalla;
   }
 }
 
