@@ -1,10 +1,11 @@
+import ProductDetails from '@/features/product_details/presentation/ProductDetails';
 import ProductListing from '@/features/product_listing/presentation/product_listing_screen';
 import { StyleSheet, Image, Platform } from 'react-native';
 
 
 export default function TabTwoScreen() {
   return (
-    <ProductListing></ProductListing>
+    <ProductDetails />
   );
 }
 

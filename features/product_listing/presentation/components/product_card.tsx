@@ -5,7 +5,6 @@ import "../../../../styles.css";
 const ProductCard = ({ product }) => {
 
     let priceIsDiscounted = product.price.discount != undefined && product.price.discount.roundedDiscount != 0;
-   
     let hasLabel = product.productLabel.labelText.length > 0
     
     return (
